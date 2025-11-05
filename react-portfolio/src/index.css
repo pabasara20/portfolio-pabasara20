@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small custom rules to better match the layout */
+body {
+    @apply bg-white font-sans;
+}
+
+/* nav specific tweaks */
+.nav-container {
+    @apply bg-white rounded-full px-4 py-2 shadow-lg;
+}
+
+.nav-item {
+    @apply text-gray-600 px-4 py-2 rounded-full transition-colors duration-150;
+}
+
+.nav-item:hover {
+    @apply text-black;
+}
+
+.nav-active {
+    @apply bg-black text-white px-5 py-2 rounded-full;
+}
+
+/* small gradient pill used behind the "Hi I'm Rishi" text */
+.name-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    color: #1f2937;
+    /* tailwind text-gray-800 */
+    background: linear-gradient(90deg, #fbfbfb 0%, #f3f1f7 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
