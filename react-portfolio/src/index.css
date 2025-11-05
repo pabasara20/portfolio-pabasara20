@@ -1,32 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Enable smooth scrolling and prevent over-scroll */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Prevent scroll above the top */
+html,
+body {
+    height: 100%;
+    overflow-y: auto;
+    overscroll-behavior-y: none;
+}
+
+/* Sticky card scroll effect */
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+    /* Safari support */
+}
+
 /* small custom rules to better match the layout */
 body {
-    @apply bg-white font-sans;
+    @apply bg-white;
+    font-family: 'Borna', sans-serif;
+    /* Fixed top padding for navbar */
+    padding-top: 70px;
+    margin: 0;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 80px;
+    }
+}
+
+/* Glass morphism header */
+.glass-header {
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* nav specific tweaks */
 .nav-container {
-    @apply bg-white rounded-full px-4 py-2 shadow-lg;
+    /* tighter pill: reduce horizontal and vertical padding, softer shadow */
+    @apply bg-white rounded-full px-2 py-1 shadow-md;
+    transition: all 0.3s ease;
 }
 
 .nav-item {
-    @apply text-gray-600 px-4 py-2 rounded-full transition-colors duration-150;
+    /* smaller click targets while keeping rounded look with smooth animations */
+    @apply text-gray-600 px-4 py-1 rounded-full;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    transform: scale(1);
 }
 
 .nav-item:hover {
-    @apply text-black;
+    @apply text-black bg-gray-50;
+    transform: scale(1.05);
 }
 
 .nav-active {
-    @apply bg-black text-white px-5 py-2 rounded-full;
+    /* active item with smooth animation */
+    @apply bg-black text-white px-4 py-1 rounded-full;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* small gradient pill used behind the "Hi I'm Rishi" text */
+/* small gradient pill used behind the "Hi I'm Pabasara" text */
 .name-pill {
     display: inline-flex;
     align-items: center;
@@ -36,4 +85,19 @@ body {
     /* tailwind text-gray-800 */
     background: linear-gradient(90deg, #fbfbfb 0%, #f3f1f7 100%);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+    .name-pill {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .name-pill {
+        padding: 0.75rem 1.75rem;
+        font-size: 1.125rem;
+    }
 }
