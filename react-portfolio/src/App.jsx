@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
+import About from './components/About'
 import Works from './components/Works'
 import VisualDelight from './components/VisualDelight'
 import Experience from './components/Experience'
@@ -73,6 +74,11 @@ export default function App() {
                 <div className="w-full max-w-4xl mx-auto px-4 md:px-6">
                     <Hero />
                 </div>
+            </section>
+
+            {/* About Section */}
+            <section className="bg-white">
+                <About />
             </section>
 
             {/* Works Section */}

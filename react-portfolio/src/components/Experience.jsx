@@ -56,10 +56,10 @@ export default function Experience() {
   ]
 
   return (
-    <section className="w-full py-10 md:py-28 bg-white">
+    <section className="w-full py-6 md:py-16 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <h2 className="text-4xl md:text-5xl font-[550] leading-tight">
             Work history
           </h2>
@@ -75,7 +75,7 @@ export default function Experience() {
               )}
 
               {/* Job Entry - Flexbox layout for better alignment */}
-              <div className="flex items-center justify-between py-6 md:py-8">
+              <div className="flex items-center justify-between py-3 md:py-4">
 
                 {/* Left section - Position titles */}
                 <div className="flex-shrink-0 w-1/3">
@@ -112,13 +112,6 @@ export default function Experience() {
 
         {/* Final bottom border - centered with content */}
         <div className="max-w-4xl mx-auto h-px bg-gray-200 mt-0"></div>
-
-        {/* Download Resume Button */}
-        <div className="flex justify-center mt-12">
-          <button className="bg-black text-white px-8 py-3 rounded-full font-medium text-base hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95">
-            Download Resume
-          </button>
-        </div>
       </div>
     </section>
   )

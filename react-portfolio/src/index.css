@@ -56,6 +56,21 @@ body {
     min-width: 400px;
 }
 
+/* Tech Stack Sliding Animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-slide {
+    animation: slide 20s linear infinite;
+}
+
 /* Sliding navigation items */
 .nav-item-sliding {
     @apply text-gray-600 px-4 py-2 rounded-full text-center;
