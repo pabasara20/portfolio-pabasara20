@@ -19,31 +19,46 @@ export default function App() {
         }
     }
 
-    // Handle scroll spy to update active navigation
+    // Handle scroll spy to update active navigation using Intersection Observer
     useEffect(() => {
-        const handleScroll = () => {
-            const sections = ['about-me', 'works', 'visual-delight', 'experience', 'contact']
-            const scrollPosition = window.scrollY + 200 // offset for header
+        const sections = [
+            { id: 'about-me', name: 'About me' },
+            { id: 'works', name: 'Works' },
+            { id: 'visual-delight', name: 'Visual Delight' },
+            { id: 'experience', name: 'Experience' },
+            { id: 'contact', name: 'Contact' }
+        ]
 
-            for (const section of sections) {
-                const element = document.getElementById(section)
-                if (element) {
-                    const { offsetTop, offsetHeight } = element
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        const sectionName = section.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())
-                        if (sectionName !== currentSection) {
-                            setCurrentSection(sectionName === 'About Me' ? 'About me' : sectionName)
-                        }
-                        break
-                    }
-                }
-            }
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px', // Trigger when section is 20% from top
+            threshold: 0
         }
 
-        window.addEventListener('scroll', handleScroll)
-        handleScroll() // Check initial position
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const sectionInfo = sections.find(section => section.id === entry.target.id)
+                    if (sectionInfo && sectionInfo.name !== currentSection) {
+                        setCurrentSection(sectionInfo.name)
+                    }
+                }
+            })
+        }
 
-        return () => window.removeEventListener('scroll', handleScroll)
+        const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+        // Observe all sections
+        sections.forEach(({ id }) => {
+            const element = document.getElementById(id)
+            if (element) {
+                observer.observe(element)
+            }
+        })
+
+        return () => {
+            observer.disconnect()
+        }
     }, [currentSection])
 
     return (
