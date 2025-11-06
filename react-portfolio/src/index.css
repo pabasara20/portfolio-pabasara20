@@ -52,8 +52,37 @@ body {
     /* tighter pill: reduce horizontal and vertical padding, softer shadow */
     @apply bg-white rounded-full px-2 py-1 shadow-md;
     transition: all 0.3s ease;
+    position: relative;
+    min-width: 400px;
 }
 
+/* Sliding navigation items */
+.nav-item-sliding {
+    @apply text-gray-600 px-4 py-2 rounded-full text-center;
+    transition: color 0.7s ease-out;
+    position: relative;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.nav-item-sliding:hover {
+    @apply text-gray-800;
+}
+
+.nav-item-sliding.nav-item-active {
+    @apply text-white;
+    transition: color 0.7s ease-out;
+}
+
+/* Sliding background indicator */
+.nav-slider {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Legacy nav items - keeping for mobile menu */
 .nav-item {
     /* smaller click targets while keeping rounded look with smooth animations */
     @apply text-gray-600 px-4 py-1 rounded-full;

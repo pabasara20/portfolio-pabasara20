@@ -1,166 +1,108 @@
 import React from 'react'
+import W1 from '../Assets/W1.png' // ✅ Example image — you can import more like W2, W3, W4 if needed
 
 export default function Works() {
-    const projects = [
+
+    // ✅ Projects data — each object includes image, title, tags, etc.
+    const archiveProjects = [
         {
-            id: 1,
-            company: "rapido",
-            title: "Captain",
-            tags: ["UX design", "Driver App", "Mobility"],
-            description: "Enhancing pick-up accuracy for riders",
-            subtitle: "A case study where I improved pick-up accuracy in the driver app by using image view and street view, which helped reduce order cancellations.",
-            backgroundColor: "bg-yellow-400",
-            phoneContent: "map"
+            id: 101,
+            title: "Reducing the returns rate post purchase",
+            tags: ["B2C", "Landing Page"],
+            subtitle: "A project that provided significant insights into user perceptions of refurbished items",
+            altText: "Flipkart Refurbished Landing Page",
+            image: W1
         },
         {
-            id: 2,
-            company: "Pincode",
-            title: "Business",
-            tags: ["B2B", "UX design", "Merchants app", "Business app"],
-            description: "Helping merchants to discover variants of a product",
-            subtitle: "A case study demonstrating how I helped merchants with their discovery issue and contributed to the addition of 2x products to the live catalog.",
-            backgroundColor: "bg-purple-500",
-            phoneContent: "barcode"
+            id: 102,
+            title: "Reducing the bounce rate and increasing the repeat visits",
+            tags: ["B2C", "Loyalty program", "Merchandising"],
+            subtitle: "An analysis of how I mitigated the bounce rate by creating a fully new user experience",
+            altText: "Flipkart SuperCoin Loyalty Program",
+            image: W1
         },
         {
-            id: 3,
-            company: "Pincode",
-            title: "Search",
-            tags: ["B2C", "UX design", "Search Experience"],
-            description: "Improving search through Auto-suggestion",
-            subtitle: "A case study of how I used the auto-suggestion feature to enhance the search experience on the Pincode app.",
-            backgroundColor: "bg-orange-400",
-            phoneContent: "keyboard"
+            id: 103,
+            title: "Enhancing product discovery experience",
+            tags: ["B2C", "E-commerce"],
+            subtitle: "A comprehensive redesign focusing on improving user trust and product discovery flows",
+            altText: "2GUD by Flipkart Redesign",
+            image: W1
         },
         {
-            id: 4,
-            company: "Pincode",
-            title: "Discovery",
-            tags: ["B2C", "UX design", "Search Experience"],
-            description: "Improving search through Auto-suggestion",
-            subtitle: "A case study of how I used the auto-suggestion feature to enhance the search experience on the Pincode app.",
-            backgroundColor: "bg-green-500",
-            phoneContent: "search"
+            id: 104,
+            title: "Building video commerce experience",
+            tags: ["B2C", "Video Platform"],
+            subtitle: "Creating an engaging video-first shopping experience to increase user engagement and conversions",
+            altText: "Flipkart Video Entertainment",
+            image: W1
         }
     ]
 
     return (
         <section className="relative w-full">
-            {/* Section Header */}
-            <div className="text-center px-4 py-16 md:py-24">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight max-w-5xl mx-auto">
-                    Recent works that have significantly boosted business metrics
-                </h2>
-            </div>
-
-            {/* Sticky Cards Container */}
-            <div className="relative w-800px" style={{ height: '500vh' }}>
-                {projects.map((project, index) => (
-                    <div
-                        key={project.id}
-                        className={`sticky ${project.backgroundColor} rounded-xl md:rounded-2xl lg:rounded-3xl relative overflow-hidden flex flex-col justify-between`}
-                        style={{
-                            top: `${80 + index * 20}px`,
-                            zIndex: index + 1,
-                            width: '90vw',
-                            maxWidth: '1200px',
-                            height: '70vh',
-                            minHeight: '400px',
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                            padding: '1.5rem'
-                        }}
-                    >
-                        {/* Empty card content - texts removed */}
-                        <div className="flex flex-col h-full relative z-10">
-                            {/* Content removed as requested */}
-                        </div>
-
-                        {/* Phone Mockup */}
-                        <div className="absolute right-4 md:right-8 top-8 md:top-12 z-20">
-                            <div className="w-20 sm:w-32 md:w-40 lg:w-48 h-40 sm:h-64 md:h-80 lg:h-96 bg-gray-900 rounded-xl md:rounded-2xl lg:rounded-3xl shadow-2xl relative overflow-hidden">
-                                {/* Phone Screen */}
-                                <div className="absolute inset-1 bg-white rounded-lg md:rounded-xl lg:rounded-2xl">
-                                    {/* Dynamic phone content based on project */}
-                                    {project.phoneContent === 'map' && (
-                                        <>
-                                            <div className="flex justify-between items-center p-1 md:p-2 text-xs text-gray-500">
-                                                <span>9:41</span>
-                                                <div className="flex gap-1">
-                                                    <span>📶</span>
-                                                    <span>🔋</span>
-                                                </div>
-                                            </div>
-                                            <div className="px-2 md:px-3 py-1 md:py-2 border-b border-gray-100">
-                                                <div className="flex items-center justify-between">
-                                                    <span className="text-xs">☰</span>
-                                                    <span className="text-xs font-medium">Go to pickup</span>
-                                                </div>
-                                            </div>
-                                            <div className="h-24 md:h-52 lg:h-64 bg-green-100 relative">
-                                                <div className="absolute top-2 md:top-4 left-2 md:left-4 w-8 md:w-16 h-8 md:h-16 bg-green-500 rounded-full flex items-center justify-center">
-                                                    <span className="text-white text-xs">📍</span>
-                                                </div>
-                                            </div>
-                                        </>
-                                    )}
-                                    {project.phoneContent === 'barcode' && (
-                                        <>
-                                            <div className="flex justify-between items-center p-1 md:p-2 text-xs text-gray-500">
-                                                <span>23:11</span>
-                                                <div className="flex gap-1">
-                                                    <span>📶</span>
-                                                    <span>🔋</span>
-                                                </div>
-                                            </div>
-                                            <div className="h-32 md:h-64 bg-yellow-100 relative flex items-center justify-center">
-                                                <div className="w-16 md:w-32 h-12 md:h-24 bg-yellow-400 rounded flex items-center justify-center">
-                                                    <span className="text-xs">�</span>
-                                                </div>
-                                            </div>
-                                            <div className="p-2 text-center">
-                                                <span className="text-xs">Scanning for product...</span>
-                                            </div>
-                                        </>
-                                    )}
-                                    {(project.phoneContent === 'keyboard' || project.phoneContent === 'search') && (
-                                        <>
-                                            <div className="flex justify-between items-center p-1 md:p-2 text-xs text-gray-500">
-                                                <span>9:30</span>
-                                                <div className="flex gap-1">
-                                                    <span>📶</span>
-                                                    <span>🔋</span>
-                                                </div>
-                                            </div>
-                                            <div className="h-20 md:h-40 bg-gray-50 relative">
-                                                {project.phoneContent === 'search' && (
-                                                    <div className="p-2">
-                                                        <div className="space-y-1">
-                                                            <div className="bg-gray-200 h-3 rounded"></div>
-                                                            <div className="bg-gray-200 h-3 rounded w-3/4"></div>
-                                                            <div className="bg-gray-200 h-3 rounded w-1/2"></div>
-                                                        </div>
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div className="absolute bottom-2 left-2 right-2 bg-gray-100 rounded p-1">
-                                                <div className="grid grid-cols-10 gap-0.5 text-xs">
-                                                    {'qwertyuiop'.split('').map(key => (
-                                                        <div key={key} className="bg-white p-0.5 rounded text-center">{key}</div>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
+            {/* =========================
+                🔹 Main "My Projects" Section
+               ========================= */}
+            <section className="relative w-full py-20 md:py-28">
+                <div className="max-w-5xl mx-auto px-6">
+                    
+                    {/* 🔹 Section Header */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-[550] leading-tight">
+                            My Projects <span className="text-gray-400 font-normal"></span>
+                        </h2>
                     </div>
-                ))}
-            </div>
 
-            {/* Final spacing */}
-            <div className="h-screen"></div>
+                    {/* 🔹 Projects Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        {archiveProjects.map((project) => (
+                            <div
+                                key={project.id}
+                                className="group cursor-pointer transition-transform duration-300"
+                            >
+                                {/* ✅ Project Image Section */}
+                                <div className="mb-5 transition-transform duration-300 group-hover:scale-[1.03]">
+                                    <img
+                                        src={project.image}
+                                        alt={project.altText}
+                                        
+                                        // 🟡 Change corner rounding here:
+                                        // rounded-lg → slightly rounded
+                                        // rounded-xl → moderately rounded (default)
+                                        // rounded-2xl → more rounded
+                                        // rounded-3xl → very rounded
+                                        // rounded-none → square edges
+                                        className="w-full max-w-full h-auto max-h-full object-cover rounded-2xl"
+                                    />
+                                </div>
+
+                                {/* 🔹 Tags */}
+                                <div className="flex flex-wrap gap-2 mb-3">
+                                    {project.tags.map((tag, tagIndex) => (
+                                        <span
+                                            key={tagIndex}
+                                            className="px-4 py-1.5 bg-gray-100 text-gray-700 text-xs font-medium rounded-full shadow-sm hover:bg-gray-200 transition-all duration-200"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* 🔹 Project Title */}
+                                <h3 className="text-xl md:text-2xl font-semibold mb-2 text-gray-800 transition-colors duration-200">
+                                    {project.title}
+                                </h3>
+
+                                {/* 🔹 Project Subtitle / Description */}
+                                <p className="text-gray-600 text-base leading-relaxed">
+                                    {project.subtitle}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </section>
     )
 }

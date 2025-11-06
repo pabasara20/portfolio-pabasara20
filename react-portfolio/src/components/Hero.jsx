@@ -3,7 +3,7 @@ import profileImage from '../Assets/Me.jpeg'
 
 export default function Hero() {
     return (
-        <section className="text-center pt-16 pb-16">
+        <section className="text-center pt-24 pb-24">
             {/* Circular badge with profile image */}
             <div className="flex justify-center">
                 <div className="rounded-full w-52 h-52 flex items-center justify-center border-8 border-white shadow-lg overflow-hidden">

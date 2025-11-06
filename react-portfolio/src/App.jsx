@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Works from './components/Works'
+import VisualDelight from './components/VisualDelight'
+import Experience from './components/Experience'
+import Contact from './components/Contact'
 
 export default function App() {
     const [currentSection, setCurrentSection] = useState('About me')
@@ -62,26 +65,17 @@ export default function App() {
                 <Works />
             </section>
 
-            {/* Placeholder sections for other nav items */}
-            <section id="visual-delight" className="min-h-screen flex items-center justify-center bg-gray-50">
-                <div className="text-center">
-                    <h2 className="text-4xl font-bold mb-4">Visual Delight</h2>
-                    <p className="text-gray-600">Coming Soon</p>
-                </div>
+            {/* Visual Delight Section */}
+            <section id="visual-delight" className="min-h-screen">
+                <VisualDelight />
             </section>
 
-            <section id="experience" className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                    <h2 className="text-4xl font-bold mb-4">Experience</h2>
-                    <p className="text-gray-600">Coming Soon</p>
-                </div>
+            <section id="experience" className="min-h-screen">
+                <Experience />
             </section>
 
-            <section id="contact" className="min-h-screen flex items-center justify-center bg-gray-50">
-                <div className="text-center">
-                    <h2 className="text-4xl font-bold mb-4">Contact</h2>
-                    <p className="text-gray-600">Coming Soon</p>
-                </div>
+            <section id="contact" className="min-h-screen">
+                <Contact />
             </section>
         </div>
     )
