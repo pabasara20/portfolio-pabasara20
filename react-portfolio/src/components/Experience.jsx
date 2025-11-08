@@ -66,7 +66,7 @@ export default function Experience() {
       duration: '',
       logo: Logo6,
       width: '20px', // Desktop Size
-      mobileWidth: '50px', // Mobile Size (e.g., 25px)
+      mobileWidth: '95px', // Mobile Size (e.g., 25px)
       height: 'auto'
     },
     {
