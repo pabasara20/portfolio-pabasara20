@@ -69,7 +69,7 @@ export default function VisualDelight() {
                                 <img
                                     src={item.image}
                                     alt={item.alt}
-                                    className="h-auto object-contain rounded-2xl transition-transform duration-300 hover:scale-101"
+                                    className="h-auto object-contain rounded-2xl transition-transform duration-900 hover:scale-101"
                                     style={{ width: 'auto', maxHeight: imageMaxHeight }}
                                     loading="lazy"
                                 />

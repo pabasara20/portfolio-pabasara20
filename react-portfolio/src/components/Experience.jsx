@@ -65,7 +65,7 @@ export default function Experience() {
       company: 'International Conference on Advanced Research in Computing 2025',
       duration: '',
       logo: Logo6,
-      width: '20px', // Desktop Size
+      width: '200px', // Desktop Size
       mobileWidth: '95px', // Mobile Size (e.g., 25px)
       height: 'auto'
     },
