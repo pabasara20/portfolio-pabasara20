@@ -202,11 +202,11 @@ body {
 
 /* Dedicated slower animations for Visual Design rows so UI speed remains unchanged */
 .animate-visual-slow {
-    animation: scroll 160s linear infinite;
+    animation: scroll 200s linear infinite;
     width: max-content;
 }
 
 .animate-visual-slow-reverse {
-    animation: slide-reverse 160s linear infinite;
+    animation: slide-reverse 200s linear infinite;
     width: max-content;
 }

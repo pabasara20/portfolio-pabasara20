@@ -24,11 +24,11 @@ export default function About() {
 
         loop: 0, // Set to 0 for an infinite loop
 
-        typeSpeed: 100, // Speed of typing (100ms per character)
+        typeSpeed: 130, // Speed of typing (100ms per character)
         deleteSpeed: 50, // Speed of erasing
 
-        // **This is the key:** A 30-second delay between words (after typing and before deleting).
-        delaySpeed: 1000, // 30000ms = 30 seconds
+        // A 1-second delay between words (after typing and before deleting).
+        delaySpeed: 1000, 
     });
 
     return (
@@ -56,12 +56,12 @@ export default function About() {
                         <div className="flex flex-col justify-center h-80">
                             <div className="space-y-4">
 
-                                <h2 className="text-4xl md:text-4xl font-[550] text-black min-h-[50px]">
+                                {/* 👇 MODIFIED LINE: Changed text-4xl to text-3xl for mobile */}
+                                <h2 className="text-3xl md:text-4xl font-[550] text-black min-h-[50px]">
                                     <span className='text-black'>{text}</span>
                                     <Cursor
                                         cursorStyle='|'
                                         cursorColor='#ffd900ff'
-                                    // The cursor will blink constantly because the loop is infinite
                                     />
                                 </h2>
 
@@ -72,7 +72,7 @@ export default function About() {
                                 {/* School Logos */}
                                 <div className="flex items-center gap-6 pt-2">
                                     {/* SUSL Logo */}
-                                    <div className="w-10 h-10 rounded-xl overflow-hidden">
+                                    <div className="w-10 h-10 rounded-xl">
                                         <img
                                             src={suslLogo}
                                             alt="Sabaragamuwa University of Sri Lanka"
@@ -81,7 +81,7 @@ export default function About() {
                                     </div>
 
                                     {/* Mahanama College Logo */}
-                                    <div className="w-10 h-10 rounded-xl overflow-hidden">
+                                    <div className="w-10 h-10 rounded-xl">
                                         <img
                                             src={mcLogo}
                                             alt="Maliyadeva College"

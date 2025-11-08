@@ -1,22 +1,33 @@
 import React from 'react'
-import Budgetly1 from '../Assets/Budgetly1.png'
-import Budgetly2 from '../Assets/Budgetly2.png'
-import Budgetly3 from '../Assets/Budgetly3.png'
-import Budgetly4 from '../Assets/Budgetly4.png'
-import Me from '../Assets/Me.jpeg'
+// REMOVED: import Budgetly1 from '../Assets/Budgetly1.png'
+// REMOVED: import Budgetly2 from '../Assets/Budgetly2.png'
+// REMOVED: import Budgetly3 from '../Assets/Budgetly3.png'
+// REMOVED: import Budgetly4 from '../Assets/Budgetly4.png'
+import Me from '../Assets/Me.jpeg' // Kept this if it's used elsewhere, though not in the snippet below
 
 export default function VisualDelight() {
 
-    // ✅ UI Images for scrolling carousel
-    const visualDelightImages = [
+    // ✅ NEW BLOCK: Load ALL images for the UI/UX Showcase dynamically 
+    // from the specified folder. This replaces the Budgetly imports.
+    // Assuming the path relative to the current file is correct: 
+    // '../Assets/Showcase/*.{png,jpg,jpeg,svg}'
+    const uiShowcaseModules = import.meta.glob('../Assets/Showcase/*.{png,jpg,jpeg,svg}', { eager: true })
+    const visualDelightImages = Object.entries(uiShowcaseModules).map(([path, mod], idx) => ({
+        id: idx + 1,
+        image: mod.default || mod, // Vite default export for assets
+        alt: path.split('/').pop() // Use filename as alt text
+    }))
+
+    // REMOVED: The old hardcoded visualDelightImages array
+    /* const visualDelightImages = [
         { id: 1, image: Budgetly1, alt: "Budgetly Interface 1" },
         { id: 2, image: Budgetly2, alt: "Budgetly Interface 2" },
         { id: 3, image: Budgetly3, alt: "Budgetly Interface 3" },
         { id: 4, image: Budgetly4, alt: "Budgetly Interface 4" }
     ]
+    */
 
     // ✅ Load ALL images from Assets/Graphic dynamically (png/jpg/jpeg/svg)
-    // This avoids importing one by one and keeps new images auto-included
     const graphicModules = import.meta.glob('../Assets/Graphic/*.{png,jpg,jpeg,svg}', { eager: true })
     const graphicImages = Object.entries(graphicModules).map(([path, mod], idx) => ({
         id: idx + 1,
@@ -37,14 +48,16 @@ export default function VisualDelight() {
                 {/* 🔹 Section Header: A few user interfaces */}
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-[550] leading-tight mb-4">
-                        A few user interfaces
+                        UI/UX Showcase
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600">
-                        A <span className="font-semibold text-black">showcase of my recent UX/UI design work.</span> <span className="text-gray-500">Some projects that display</span> <span className="font-semibold text-black">my visual prowess.</span>
+                        A showcase of my recent UX/UI projects highlighting my
+                        visual design skills and creativity.
                     </p>
                 </div>
 
                 {/* 🔹 Scrolling Carousel Container - UI Images */}
+                {/* Now uses dynamically loaded visualDelightImages */}
                 <div className="relative overflow-hidden">
                     <div className="flex gap-8 animate-scroll">
                         {/* First set and Duplicate set for seamless loop */}
@@ -72,10 +85,10 @@ export default function VisualDelight() {
                     {/* Section Header: Visual design projects */}
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-[550] leading-tight mb-6">
-                            Visual design projects
+                            Visual Design Projects
                         </h2>
                         <p className="text-lg md:text-xl text-gray-600">
-                            A <span className="font-semibold text-black">visual designer turned UX designer.</span> <span className="text-gray-500">Some projects that display</span> <span className="font-semibold text-black">my visual prowess.</span>
+                            A visual designer now focused on UX, showcasing projects that highlight my creative and visual expertise.
                         </p>
                     </div>
 

@@ -62,7 +62,7 @@ export default function Contact() {
                     <div className="flex gap-4">
                         {/* LinkedIn */}
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/20pabasara/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-8 h-8 bg-gray-100 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 group/btn"
@@ -75,7 +75,7 @@ export default function Contact() {
 
                         {/* Behance */}
                         <a
-                            href="https://behance.net"
+                            href="https://www.behance.net/pabasara20"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-8 h-8 bg-gray-100 hover:bg-blue-500 rounded-lg flex items-center justify-center transition-all duration-300 group/btn"
@@ -88,7 +88,7 @@ export default function Contact() {
 
                         {/* WhatsApp */}
                         <a
-                            href="https://wa.me/1234567890"
+                            href="https://wa.me/+94712959389"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-8 h-8 bg-gray-100 hover:bg-green-500 rounded-lg flex items-center justify-center transition-all duration-300 group/btn"
@@ -101,7 +101,7 @@ export default function Contact() {
 
                         {/* GitHub */}
                         <a
-                            href="https://github.com"
+                            href="https://github.com/pabasara20"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-8 h-8 bg-gray-100 hover:bg-gray-800 rounded-lg flex items-center justify-center transition-all duration-300 group/btn"
@@ -114,7 +114,7 @@ export default function Contact() {
 
                         {/* Instagram */}
                         <a
-                            href="https://instagram.com"
+                            href="https://www.instagram.com/20pabasara/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-8 h-8 bg-gray-100 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center transition-all duration-300 group/btn"
