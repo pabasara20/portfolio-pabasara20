@@ -1,30 +1,69 @@
-import React from 'react'
-import profileImage from '../Assets/Me.jpeg'
+import React from 'react';
+import profileImage from '../Assets/Me.jpeg';
 
 export default function Hero() {
-    return (
-        <section className="text-center pt-24 pb-24">
-            {/* Circular badge with profile image */}
-            <div className="flex justify-center">
-                <div className="rounded-full w-52 h-52 flex items-center justify-center border-8 border-white shadow-lg overflow-hidden">
-                    <img
-                        src={profileImage}
-                        alt="Pabasara Ranasinghe"
-                        className="w-full h-full object-cover rounded-full"
-                    />
-                </div>
+  return (
+    <section className="pt-6 pb-12 md:pt-32 md:pb-32">
+      <div className="max-w-3xl mx-auto flex flex-col items-center text-center px-4">
+        {/* Profile image */}
+        <div className="rounded-full w-48 h-48 md:w-56 md:h-56 flex items-center justify-center border-8 border-white shadow-lg overflow-hidden mb-4 md:mb-0">
+          <img
+            src={profileImage}
+            alt="Pabasara Ranasinghe"
+            className="w-full h-full object-cover rounded-full"
+          />
+        </div>
 
-            </div>
+        {/* Greeting pill */}
+        <p className="text-gray-800 inline-flex items-center justify-center mb-5 mt-8 md:mb-6">
+          <span className="name-pill whitespace-nowrap inline-flex items-center gap-2">
+            Hi I'm Pabasara{' '}
+            <span
+              role="img"
+              aria-label="waving hand"
+              className="align-middle select-none"
+              style={{
+                display: 'inline-block',
+                transformOrigin: '70% 70%',
+                animation: 'wave 2s infinite',
+              }}
+            >
+              👋
+            </span>
+          </span>
+        </p>
 
-            <p className="mt-4 text-gray-800 inline-flex items-center justify-center">
-                <span className="name-pill">Hi I'm Pabasara <span className="ml-2">👋</span></span>
-            </p>
+        {/* Main heading */}
+        <h1 className="text-4xl md:text-5xl font-[550] leading-tight">
+          I craft digital products
+          <br />
+          and experiences!
+        </h1>
 
-            <h1 className="mt-6 md:text-5xl font-[550] leading-tight">I craft digital products<br />and experiences!</h1>
+        {/* Supporting paragraph */}
+        <p className="mt-6 md:mt-7 text-gray-500 font-[400] text-base sm:text-lg md:text-s leading-relaxed max-w-2xl">
+          An <strong className="text-gray-800">Intern UI/UX Designer</strong> based
+          in <strong className="text-gray-800">Colombo</strong>, focused on crafting
+          intuitive user experiences and transforming ideas into meaningful digital
+          products.
+        </p>
+      </div>
 
-            <p className="mt-8 text-gray-400 font-[400] text-xl max-w-4xl mx-auto">
-                An <strong className="text-gray-800">Intern UI/UX Designer</strong> based in <strong className="text-gray-800">Colombo</strong>, currently working on creating intuitive user experiences and transforming ideas into meaningful digital products.
-            </p>
-        </section>
-    )
+      {/* Inline keyframes for waving */}
+      <style>
+        {`
+          @keyframes wave {
+            0% { transform: rotate(0deg); }
+            15% { transform: rotate(14deg); }
+            30% { transform: rotate(-8deg); }
+            40% { transform: rotate(14deg); }
+            50% { transform: rotate(-4deg); }
+            60% { transform: rotate(10deg); }
+            70% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+          }
+        `}
+      </style>
+    </section>
+  );
 }

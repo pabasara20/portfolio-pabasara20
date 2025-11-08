@@ -71,6 +71,21 @@ body {
     animation: slide 20s linear infinite;
 }
 
+/* Design Tools Reverse Sliding Animation */
+@keyframes slide-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-reverse {
+    animation: slide-reverse 20s linear infinite;
+}
+
 /* Sliding navigation items */
 .nav-item-sliding {
     @apply text-gray-600 px-4 py-2 rounded-full text-center;
@@ -163,4 +178,35 @@ body {
 
 .animate-scroll:hover {
     animation-play-state: paused;
+}
+
+/* Example Keyframes and utility for Tailwind CSS */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Translate the width of one set of images (half the total width) */
+        /* Adjust this value based on the total width of your un-duplicated cards and gaps */
+        transform: translateX(calc(-100% / 2));
+    }
+}
+
+.animate-scroll {
+    animation: scroll 30s linear infinite;
+    /* Adjust duration as needed */
+    width: max-content;
+    /* Ensure the flex container takes up the total width */
+}
+
+/* Dedicated slower animations for Visual Design rows so UI speed remains unchanged */
+.animate-visual-slow {
+    animation: scroll 160s linear infinite;
+    width: max-content;
+}
+
+.animate-visual-slow-reverse {
+    animation: slide-reverse 160s linear infinite;
+    width: max-content;
 }

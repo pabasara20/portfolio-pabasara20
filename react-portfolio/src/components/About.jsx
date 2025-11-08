@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
-import profileImage from '../Assets/mypng.png'
+import profileImage from '../Assets/mypng2.png'
 import suslLogo from '../Assets/susl.png'
 import mcLogo from '../Assets/mc.png'
 
@@ -60,7 +60,7 @@ export default function About() {
                                     <span className='text-black'>{text}</span>
                                     <Cursor
                                         cursorStyle='|'
-                                        cursorColor='#7C3AED'
+                                        cursorColor='#ffd900ff'
                                     // The cursor will blink constantly because the loop is infinite
                                     />
                                 </h2>
@@ -100,44 +100,11 @@ export default function About() {
                         <h3 className="text-lg font-medium text-gray-500">Tech Stack</h3>
                     </div>
 
-                    {/* Sliding Container - Show 8 icons at a time */}
-                    <div className="overflow-hidden relative max-w-4xl mx-auto">
+                    {/* Sliding Container - Show remaining tech icons */}
+                    <div className="overflow-hidden relative max-w-xl mx-auto">
                         <div className="flex animate-slide space-x-6">
-                            {/* First set of tech icons */}
+                            {/* First set of tech icons (without design tools) */}
                             <div className="flex items-center space-x-6 min-w-max">
-                                {/* Figma */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
-                                        <img
-                                            src={figmaLogo}
-                                            alt="Figma"
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Adobe Illustrator */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
-                                        <img
-                                            src={illustratorLogo}
-                                            alt="Adobe Illustrator"
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Photoshop */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
-                                        <img
-                                            src={photoshopLogo}
-                                            alt="Adobe Photoshop"
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
                                 {/* JavaScript */}
                                 <div className="flex flex-col items-center">
                                     <div className="w-10 h-10 rounded-lg overflow-hidden">
@@ -188,6 +155,134 @@ export default function About() {
                                         <img
                                             src={flutterLogo}
                                             alt="Flutter"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Node.js */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={nodeLogo}
+                                            alt="Node.js"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Duplicate set for seamless loop */}
+                            <div className="flex items-center space-x-6 min-w-max">
+                                {/* JavaScript */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={jsLogo}
+                                            alt="JavaScript"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* React */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={reactLogo}
+                                            alt="React"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Analysis */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={analysisLogo}
+                                            alt="Analysis"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* DB Leaf */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={dbLeafLogo}
+                                            alt="Database"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Flutter */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={flutterLogo}
+                                            alt="Flutter"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Node.js */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={nodeLogo}
+                                            alt="Node.js"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Design Tools Section with Reverse Sliding Animation */}
+                <div className="mt-8 w-full">
+                    <div className="text-center mb-4">
+                        <h3 className="text-lg font-medium text-gray-500">Design Tools</h3>
+                    </div>
+
+                    {/* Reverse Sliding Container */}
+                    <div className="overflow-hidden relative max-w-xl mx-auto">
+                        <div className="flex animate-slide-reverse space-x-6">
+                            {/* First set of design tools */}
+                            <div className="flex items-center space-x-6 min-w-max">
+                                {/* Figma */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={figmaLogo}
+                                            alt="Figma"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Adobe Illustrator */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={illustratorLogo}
+                                            alt="Adobe Illustrator"
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Photoshop */}
+                                <div className="flex flex-col items-center">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
+                                        <img
+                                            src={photoshopLogo}
+                                            alt="Adobe Photoshop"
                                             className="w-full h-full object-contain"
                                         />
                                     </div>
@@ -224,61 +319,6 @@ export default function About() {
                                         <img
                                             src={photoshopLogo}
                                             alt="Adobe Photoshop"
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* JavaScript */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
-                                        <img
-                                            src={jsLogo}
-                                            alt="JavaScript"
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* React */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
-                                        <img
-                                            src={reactLogo}
-                                            alt="React"
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Analysis */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
-                                        <img
-                                            src={analysisLogo}
-                                            alt="Analysis"
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* DB Leaf */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
-                                        <img
-                                            src={dbLeafLogo}
-                                            alt="Database"
-                                            className="w-full h-full object-contain"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Flutter */}
-                                <div className="flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-lg overflow-hidden">
-                                        <img
-                                            src={flutterLogo}
-                                            alt="Flutter"
                                             className="w-full h-full object-contain"
                                         />
                                     </div>

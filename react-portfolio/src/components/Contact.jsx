@@ -3,10 +3,10 @@ import profileImage from '../Assets/Me.jpeg'
 
 export default function Contact() {
     return (
-        <section className="relative w-full min-h-screen bg-white text-black py-16 md:py-24">
-            <div className="max-w-4xl mx-auto px-4">
+        <section className="relative w-full min-h-screen bg-white text-black py-20 md:py-24">
+            <div className="max-w-4xl mx-auto mt-10 px-4">
                 {/* Main Heading */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-[550] leading-tight">
                         Thanks for exploring my portfolio!
                     </h2>
