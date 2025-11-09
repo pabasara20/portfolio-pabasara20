@@ -3,7 +3,9 @@ import profileImage from '../Assets/Me.jpeg';
 
 export default function Hero() {
   return (
-    <section className="pt-6 pb-12 md:pt-32 md:pb-32">
+    // 🎨 Key Change: Reduced md:pt-32 to md:pt-16 (or md:pt-24 for slightly more space)
+    // The pt-6 and pb-12 keep it suitable for mobile devices.
+    <section className="pt-0 pb-0 md:pt-24 md:pb-32">
       <div className="max-w-3xl mx-auto flex flex-col items-center text-center px-4">
         {/* Profile image */}
         <div className="rounded-full w-48 h-48 md:w-56 md:h-56 flex items-center justify-center border-8 border-white shadow-lg overflow-hidden mb-4 md:mb-0">

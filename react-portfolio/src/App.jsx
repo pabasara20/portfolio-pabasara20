@@ -6,8 +6,10 @@ import Works from './components/Works'
 import VisualDelight from './components/VisualDelight'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
+import LoadingScreen from './components/LoadingScreen'
 
 export default function App() {
+    const [isLoading, setIsLoading] = useState(true)
     const [currentSection, setCurrentSection] = useState('About me')
 
     const scrollToSection = (sectionId) => {
@@ -64,40 +66,64 @@ export default function App() {
 
     return (
         <div className="min-h-screen bg-white text-black">
-            <NavBar
-                currentSection={currentSection}
-                scrollToSection={scrollToSection}
-            />
+            {/* Loading Screen */}
+            {isLoading && (
+                <LoadingScreen
+                    onLoadingComplete={() => {
+                        setIsLoading(false)
+                        // Scroll to About Me section after a brief delay
+                        setTimeout(() => {
+                            const aboutSection = document.getElementById('about-me')
+                            if (aboutSection) {
+                                aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                            }
+                            setCurrentSection('About me')
+                        }, 1)
+                    }}
+                />
+            )}
 
-            {/* Hero Section */}
-            <section id="about-me" className="min-h-screen">
-                <div className="w-full max-w-4xl mx-auto px-4 md:px-6">
-                    <Hero />
-                </div>
-            </section>
+            {/* Main App Content */}
+            {!isLoading && (
+                <>
+                    <NavBar
+                        currentSection={currentSection}
+                        scrollToSection={scrollToSection}
+                    />
 
-            {/* About Section */}
-            <section className="bg-white">
-                <About />
-            </section>
+                    {/* Hero Section */}
+                    <section id="about-me" className="min-h-screen">
+                        <div className="w-full max-w-4xl mx-auto px-4 md:px-6">
+                            <Hero />
+                        </div>
+                    </section>
 
-            {/* Works Section */}
-            <section id="works" className="min-h-screen">
-                <Works />
-            </section>
+                    {/* About Section */}
+                    <section className="bg-white">
+                        <About />
+                    </section>
 
-            {/* Visual Delight Section */}
-            <section id="visual-delight" className="min-h-screen">
-                <VisualDelight />
-            </section>
+                    {/* Works Section */}
+                    <section id="works" className="min-h-screen">
+                        <Works />
+                    </section>
 
-            <section id="experience" className="min-h-screen">
-                <Experience />
-            </section>
+                    {/* Visual Delight Section */}
+                    <section id="visual-delight" className="min-h-screen">
+                        <VisualDelight />
+                    </section>
 
-            <section id="contact" className="min-h-screen">
-                <Contact />
-            </section>
+                    {/* Experience Section */}
+                    <section id="experience" className="min-h-screen">
+                        <Experience />
+                    </section>
+
+                    {/* Contact Section */}
+                    <section id="contact" className="min-h-screen">
+                        <Contact />
+                    </section>
+                </>
+            )}
         </div>
     )
 }
